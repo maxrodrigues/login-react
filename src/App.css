@@ -15,27 +15,6 @@
   margin: 40px auto;
 }
 
-.form-group {
-  display: flex;
-  flex-direction: column;
-  margin: 20px 0;
-}
-
-.form-group label {
-  font-size: 14px;
-  color: darkblue;
-}
-
-.btn {
-  height: 40px;
-  font-size: 16px;
-  padding: 5px;
-  background-color: darkblue;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-}
-
 @media (max-width: 1024px) and (min-width: 768px) {
   .login-area {
     width: 40%;
