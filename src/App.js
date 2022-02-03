@@ -1,11 +1,13 @@
 import "./App.css";
 import { GiAlienEgg } from "react-icons/gi";
 import { useForm } from "react-hook-form";
-import Loading from "./components/Loading";
-import Input from "./components/Input";
+import Loading from "./ui/components/Loading";
+import Input from "./ui/components/Input";
 import React, { useState } from "react";
+import Button from "./ui/components/Button";
+import Checkbox from "./ui/components/Checkbox";
+
 import Swal from "sweetalert2";
-import Button from "./components/Button";
 
 const App = () => {
   const {
@@ -19,6 +21,8 @@ const App = () => {
 
   const onSubmit = (data) => {
     setToggle(true);
+
+    console.log(data);
 
     setTimeout(() => {
       setToggle(false);
@@ -51,7 +55,12 @@ const App = () => {
               ref={ref}
               {...register("password", { required: true })}
             />
-            <Button label="Enviar" />
+            <Checkbox
+              label="Mantenha-me conectado"
+              ref={ref}
+              {...register("remember")}
+            />
+            <Button label="Enviar" ref={ref} />
           </form>
         </div>
       </div>
