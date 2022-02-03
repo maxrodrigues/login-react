@@ -2,10 +2,11 @@ import "./App.css";
 import { GiAlienEgg } from "react-icons/gi";
 import { useForm } from "react-hook-form";
 import Loading from "./components/Loading";
-import { useState } from "react";
+import Input from "./components/Input";
+import React, { useState } from "react";
 import Swal from "sweetalert2";
 
-function App() {
+const App = () => {
   const {
     register,
     handleSubmit,
@@ -13,6 +14,8 @@ function App() {
   } = useForm();
 
   const [toggle, setToggle] = useState(false);
+  const ref = React.useRef();
+
   const onSubmit = (data) => {
     setToggle(true);
 
@@ -34,32 +37,22 @@ function App() {
           />
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="form-group">
-              <label>E-mail</label>
-              <input
+              <Input
+                label="E-mail"
                 type="email"
-                className={errors.email ? "form-control error" : "form-control"}
+                errors={errors}
+                ref={ref}
                 {...register("email", { required: true })}
               />
-              {errors.email?.type === "required" && (
-                <span className="feedback-error">
-                  O campo e-mail é obrigatório
-                </span>
-              )}
             </div>
             <div className="form-group">
-              <label>Senha</label>
-              <input
+              <Input
+                label="Senha"
                 type="password"
-                className={
-                  errors.password ? "form-control error" : "form-control"
-                }
+                errors={errors}
+                ref={ref}
                 {...register("password", { required: true })}
               />
-              {errors.password?.type === "required" && (
-                <span className="feedback-error">
-                  O campo senha é obrigatório
-                </span>
-              )}
             </div>
             <div className="form-group">
               <button type="submit" className="btn">
@@ -71,6 +64,6 @@ function App() {
       </div>
     </>
   );
-}
+};
 
 export default App;

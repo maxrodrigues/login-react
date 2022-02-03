@@ -26,23 +26,6 @@
   color: darkblue;
 }
 
-.form-control {
-  height: 30px;
-  border: 1px solid rgb(99, 99, 99);
-  border-radius: 6px;
-  padding: 5px;
-  font-size: 16px;
-  color: #333;
-}
-
-.error {
-  border: 1px solid red;
-}
-
-.form-control:focus-visible {
-  outline: none;
-}
-
 .btn {
   height: 40px;
   font-size: 16px;
@@ -51,11 +34,6 @@
   color: #fff;
   border: none;
   border-radius: 6px;
-}
-
-.feedback-error {
-  color: red;
-  font-size: 10px;
 }
 
 @media (max-width: 1024px) and (min-width: 768px) {
