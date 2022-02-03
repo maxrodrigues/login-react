@@ -1,38 +1,87 @@
-.App {
-  text-align: center;
+.app {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.logo-area {
+  background-color: darkblue;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.login-area {
+  width: 30%;
+  margin: 40px auto;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.form-group {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: 20px 0;
 }
 
-.App-link {
-  color: #61dafb;
+.form-group label {
+  font-size: 14px;
+  color: darkblue;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.form-control {
+  height: 30px;
+  border: 1px solid rgb(99, 99, 99);
+  border-radius: 6px;
+  padding: 5px;
+  font-size: 16px;
+  color: #333;
+}
+
+.error {
+  border: 1px solid red;
+}
+
+.form-control:focus-visible {
+  outline: none;
+}
+
+.btn {
+  height: 40px;
+  font-size: 16px;
+  padding: 5px;
+  background-color: darkblue;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+}
+
+.feedback-error {
+  color: red;
+  font-size: 10px;
+}
+
+@media (max-width: 1024px) and (min-width: 768px) {
+  .login-area {
+    width: 40%;
+    margin: 40px auto;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media (max-width: 768px) and (min-width: 425px) {
+  .login-area {
+    width: 50%;
+    margin: 40px auto;
+  }
+}
+
+@media (max-width: 425px) and (min-width: 320px) {
+  .login-area {
+    width: 100%;
+    margin: 40px auto;
+  }
+}
+
+@media (max-width: 320px) {
+  .login-area {
+    width: 100%;
+    margin: 40px auto;
   }
 }
